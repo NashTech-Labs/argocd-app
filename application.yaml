@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: <your-own-git-repo-url>
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  
+  syncPolicy: 
+    automated:
+     selfHeal: true
+     prune: true
+
+
+
+# prune — If true ArgoCD is allowed to prune resources during auto-syncing.
+# selfHeal — If true ArgoCD can automatically create and update resources
