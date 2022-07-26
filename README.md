@@ -25,7 +25,8 @@ $ minikube start
 4. Access the argocd dashboard
 
 ```
-$ kubectl port-forward <argocd-server-svc> 8088:443
+$ kubectl get svc -n argocd
+$ kubectl port-forward argocd-server 8088:443
 ```
 
 5. Edit the repoURL in application.yaml
@@ -38,4 +39,5 @@ $ kubectl apply -f application.yaml
 7. Access the deployed application
 
 ```
-<minikubeip:31412>
+$ minikubeip:31412
+```
