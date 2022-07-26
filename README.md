@@ -1,7 +1,7 @@
 # argocd
 ##### Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
-#### deploy the application using argocd on minikube
+## deploy the application using argocd on minikube
 
 ## prerequisite
 
